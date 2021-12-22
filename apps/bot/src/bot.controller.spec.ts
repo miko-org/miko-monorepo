@@ -3,20 +3,20 @@ import { BotController } from './bot.controller';
 import { BotService } from './bot.service';
 
 describe('BotController', () => {
-  let botController: BotController;
+	let botController: BotController;
 
-  beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
-      controllers: [BotController],
-      providers: [BotService],
-    }).compile();
+	beforeEach(async () => {
+		const app: TestingModule = await Test.createTestingModule({
+			controllers: [BotController],
+			providers: [BotService]
+		}).compile();
 
-    botController = app.get<BotController>(BotController);
-  });
+		botController = app.get<BotController>(BotController);
+	});
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(botController.getHello()).toBe('Hello World!');
-    });
-  });
+	describe('root', () => {
+		it('should return "Hello World!"', () => {
+			expect(botController.getHello()).toBe('Hello World!');
+		});
+	});
 });

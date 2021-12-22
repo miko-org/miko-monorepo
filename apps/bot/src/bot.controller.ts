@@ -3,10 +3,10 @@ import { BotService } from './bot.service';
 
 @Controller()
 export class BotController {
-  constructor(private readonly botService: BotService) {}
+	constructor(private readonly botService: BotService) {}
 
-  @Get()
-  getHello(): string {
-    return this.botService.getHello();
-  }
+	@Get()
+	getHello(): string {
+		return this.botService.getHello();
+	}
 }
