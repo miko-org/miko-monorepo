@@ -8,15 +8,26 @@
 		"noLib": false,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
+		"resolveJsonModule": true,
 		"target": "es6",
 		"sourceMap": false,
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"paths": {
+			"@miko/common": [
+				"libs/common/src"
+			],
+			"@miko/common/*": [
+				"libs/common/src/*"
+			]
+		}
 	},
 	"include": [
-		"src/**/*"
+		"apps/**/*",
+		"libs/**/*",
+		"migrations/**/*"
 	],
 	"exclude": [
-		"node_modules",
-		"**/*.spec.ts"
+		"node_modules"
 	]
 }

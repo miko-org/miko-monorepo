@@ -1,14 +1,12 @@
 {
 	"name": "@miko/monorepo",
-	"description": "\uD83C\uDF80 Miko is simple, multipurpose bot that will help you with your server, which you can manage using the dashboard on our website.",
+	"description": "🎀 Miko is simple, multipurpose bot that will help you with your server, which you can manage using the dashboard on our website.",
 	"version": "0.1.0",
 	"scripts": {
 		"build": "rimraf dist && nest build",
 		"format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
-		"start": "nest start",
-		"start:dev": "nest start --watch",
+		"start": "nest start --watch",
 		"start:debug": "nest start --debug --watch",
-		"start:prod": "node dist/main",
 		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
 		"prepare": "husky install .github/husky",
 		"release": "release-it"
@@ -41,12 +39,21 @@
 	},
 	"dependencies": {
 		"@nestjs/common": "^8.0.0",
+		"@nestjs/config": "^1.1.5",
 		"@nestjs/core": "^8.0.0",
+		"@nestjs/schedule": "^1.0.2",
+		"@nestjs/typeorm": "^8.0.2",
+		"@sentry/node": "^6.16.1",
+		"cache-manager": "^3.6.0",
 		"discord.js": "^13.3.1",
-		"necord": "^3.0.3",
+		"hot-shots": "^9.0.0",
+		"necord": "3.0.7",
+		"nestjs-hot-shots": "^2.0.3",
+		"pg": "^8.7.1",
 		"reflect-metadata": "^0.1.13",
 		"rimraf": "^3.0.2",
-		"rxjs": "^7.2.0"
+		"rxjs": "^7.2.0",
+		"typeorm": "^0.2.41"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^15.0.0",
@@ -54,6 +61,8 @@
 		"@favware/npm-deprecate": "^1.0.4",
 		"@nestjs/cli": "^8.0.0",
 		"@nestjs/schematics": "^8.0.0",
+		"@types/cache-manager": "^3.4.2",
+		"@types/cron": "^1.7.3",
 		"@types/node": "^16.0.0",
 		"@typescript-eslint/eslint-plugin": "^4.28.2",
 		"@typescript-eslint/parser": "^4.28.2",
@@ -64,7 +73,7 @@
 		"prettier": "^2.3.2",
 		"release-it": "^14.11.8",
 		"ts-loader": "^9.2.3",
-		"ts-node": "^10.0.0",
+		"ts-node": "^10.4.0",
 		"tsconfig-paths": "^3.10.1",
 		"typescript": "^4.3.5"
 	},
