@@ -1,1 +1,1 @@
-export * from './cacheable-domain.provider'
+export * from './cacheable-domain.provider';
