@@ -3427,10 +3427,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-necord@3.0.7:
-  version "3.0.7"
-  resolved "https://registry.npmjs.org/necord/-/necord-3.0.7.tgz#816a5d21fa56ccc0f6a21ea98720d0d84a9a41fc"
-  integrity sha512-pqMI+c+z/e4D1pV4AxgLBFci4vDien9Dl5c+IU90KZ08r1HX0PLhfjpKY7b3p9oxLDlQNDlnN+kTR3ZOJXF5hg==
+necord@3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/necord/-/necord-3.0.8.tgz#f97d6ee11b7f5cb3d2c6921ec887191b4077f9b2"
+  integrity sha512-s2fxg4hOqXepq70K/c0uirRy8dcDZLUOlT9iA/6XHMUdnpfGstM4qb9455B2Hx7Thiu41ebEo5VNnDjI9pxBxQ==
 
 negotiator@^0.6.2:
   version "0.6.2"

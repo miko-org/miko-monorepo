@@ -47,7 +47,7 @@
 		"cache-manager": "^3.6.0",
 		"discord.js": "^13.3.1",
 		"hot-shots": "^9.0.0",
-		"necord": "3.0.7",
+		"necord": "3.0.8",
 		"nestjs-hot-shots": "^2.0.3",
 		"pg": "^8.7.1",
 		"reflect-metadata": "^0.1.13",
