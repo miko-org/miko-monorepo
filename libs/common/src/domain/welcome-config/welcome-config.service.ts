@@ -18,4 +18,10 @@ export class WelcomeConfigService extends BaseDomainService<WelcomeConfig> {
 	) {
 		super();
 	}
+
+	protected createNew(guildId: string): WelcomeConfig {
+		return this.repository.create({
+			guildId
+		});
+	}
 }

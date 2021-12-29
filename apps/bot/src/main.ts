@@ -17,7 +17,7 @@ const bootstrap = async () => {
 		release: PackageJson.version,
 		environment: configService.get('NODE_ENV', 'development'),
 		debug: configService.get('NODE_ENV', 'development') === 'development',
-		initialScope: scope => scope.setTag('instance', PackageJson.name),
+		initialScope: scope => scope.setTag('instance', 'miko-bot'),
 		sampleRate: 1,
 		tracesSampleRate: 1,
 		integrations: [

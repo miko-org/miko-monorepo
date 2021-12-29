@@ -1,8 +1,10 @@
+import type { RedisOptions } from 'ioredis';
+import * as ioredisStore from 'cache-manager-ioredis';
 import { CacheModule, Logger, Module } from '@nestjs/common';
 import { NecordModule } from 'necord';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BotUpdate } from './bot.update';
-import { UtilsModule } from './utils/utils.module';
+import { InformationModule } from './information/information.module';
 import { EmotionsModule } from './emotions/emotions.module';
 import { ModerationModule } from './moderation/moderation.module';
 import { VoiceModule } from './voice/voice.module';
@@ -14,8 +16,18 @@ import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
 	imports: [
-		CacheModule.register({ isGlobal: true }),
 		ConfigModule.forRoot({ isGlobal: true, cache: true, ignoreEnvFile: true }),
+		CacheModule.registerAsync<RedisOptions>({
+			isGlobal: true,
+			useFactory: (configService: ConfigService) => ({
+				store: ioredisStore,
+				host: configService.get('REDIS_HOST', 'localhost'),
+				port: configService.get('REDIS_PORT', 6379),
+				username: configService.get('REDIS_USERNAME'),
+				password: configService.get('REDIS_PASSWORD')
+			}),
+			inject: [ConfigService]
+		}),
 		TypeOrmModule.forRootAsync({
 			inject: [ConfigService],
 			useFactory: (configService: ConfigService) => ({
@@ -62,7 +74,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 		ConfigModule,
 		EmotionsModule,
 		ModerationModule,
-		UtilsModule,
+		InformationModule,
 		VoiceModule,
 		WelcomeModule
 	],

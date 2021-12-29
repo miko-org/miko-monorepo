@@ -14,9 +14,9 @@ export class BotMetrics {
 
 		this.metrics.increment('command.execution', {
 			command: [
+				interaction.commandName,
 				interaction.options.getSubcommandGroup(false),
-				interaction.options.getSubcommand(false),
-				interaction.commandName
+				interaction.options.getSubcommand(false)
 			]
 				.filter(x => !!x)
 				.join(' ')
@@ -25,49 +25,41 @@ export class BotMetrics {
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getGuildCount() {
-		return this.metrics.gauge('discord.guilds', this.client.guilds.cache.size);
+		this.metrics.gauge('guilds.size', this.client.guilds.cache.size);
 	}
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getGuildMemberCount() {
 		this.metrics.gauge(
-			'discord.members',
-			this.client.guilds.cache.reduce((acc, guild) => {
-				acc += guild.memberCount;
-				return acc;
-			}, 0)
+			'members.size',
+			this.client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount)
 		);
 	}
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getUserCount() {
-		return this.metrics.gauge('discord.users', this.client.users.cache.size);
+		this.metrics.gauge('users.size', this.client.users.cache.size);
 	}
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getChannelCount() {
 		const [text, voice] = this.client.channels.cache.partition(channel => channel.isText());
-		this.metrics.gauge('discord.channels.voice', voice.size);
-		this.metrics.gauge('discord.channels.text', text.size);
+		this.metrics.gauge('channels.voice.size', voice.size);
+		this.metrics.gauge('channels.text.size', text.size);
 	}
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getEmojiCount() {
-		return this.metrics.gauge('discord.emojis', this.client.emojis.cache.size);
+		this.metrics.gauge('emojis.size', this.client.emojis.cache.size);
 	}
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getAveragePing() {
-		return this.metrics.gauge('discord.latency', this.client.ws.ping);
+		this.metrics.gauge('latency', this.client.ws.ping);
 	}
 
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getStatus() {
-		return this.metrics.gauge('discord.status', this.client.ws.status);
-	}
-
-	@Cron(CronExpression.EVERY_30_SECONDS)
-	public getUptime() {
-		return this.metrics.gauge('discord.uptime', this.client.uptime);
+		this.metrics.gauge('status', this.client.ws.status);
 	}
 }

@@ -4,7 +4,7 @@ import { Client, CommandInteraction, ContextMenuInteraction, MessageEmbed, User 
 import { Color } from '../../../../libs/common/src/enums/embed-colors.enum';
 
 @Injectable()
-export class UtilsCommands {
+export class InformationCommands {
 	public constructor(private readonly client: Client) {}
 
 	@UserCommand({ name: 'Get user avatar' })
@@ -12,7 +12,7 @@ export class UtilsCommands {
 		return interaction.reply({
 			embeds: [
 				new MessageEmbed()
-					.setAuthor(user.tag, user.avatarURL())
+					.setAuthor(interaction.user.tag, interaction.user.avatarURL())
 					.setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
 					.setColor(Color.MAGENTA)
 			],
