@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { CommandGroup, Context, On, Once, SlashCommand } from "necord";
-import { Client, CloseEvent, CommandInteraction, Guild, Snowflake } from "discord.js";
+import { CommandGroup, Context, On, Once, SlashCommand } from 'necord';
+import { Client, CloseEvent, CommandInteraction, Guild, Snowflake } from 'discord.js';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
