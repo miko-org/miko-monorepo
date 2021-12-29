@@ -4,12 +4,14 @@
 	"version": "0.1.0",
 	"scripts": {
 		"build": "rimraf dist && nest build",
+		"prepublish:git": "npm run build",
+		"publish:git": "release-it",
 		"format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
 		"start": "nest start --watch",
 		"start:debug": "nest start --debug --watch",
 		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
 		"prepare": "husky install .github/husky",
-		"release": "release-it"
+		"test": "echo test"
 	},
 	"dependencies": {
 		"@nestjs/common": "8.2.4",
