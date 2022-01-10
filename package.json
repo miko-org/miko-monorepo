@@ -36,7 +36,7 @@
 		"@commitlint/cli": "16.0.1",
 		"@commitlint/config-angular": "16.0.0",
 		"@favware/npm-deprecate": "1.0.4",
-		"@nestjs/cli": "8.1.6",
+		"@nestjs/cli": "8.1.8",
 		"@nestjs/schematics": "8.0.5",
 		"@types/cache-manager": "3.4.2",
 		"@types/cron": "1.7.3",
