@@ -9,7 +9,7 @@ export class BotMetrics {
 	public constructor(private readonly metrics: StatsD, private readonly client: Client) {}
 
 	@On('interactionCreate')
-	public getCommandExecution(@Context() interaction: CommandInteraction) {
+	public getCommandExecution(@Context() [interaction]: [CommandInteraction]) {
 		if (!interaction.isApplicationCommand()) return;
 
 		this.metrics.increment('command.execution', {
@@ -44,7 +44,7 @@ export class BotMetrics {
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getChannelCount() {
 		const [text, voice] = this.client.channels.cache.partition(channel => channel.isText());
-		this.metrics.gauge('channels.voice.size', voice.size);
+		this.metrics.gauge('channels.temp-channels.size', voice.size);
 		this.metrics.gauge('channels.text.size', text.size);
 	}
 

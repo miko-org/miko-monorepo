@@ -1,18 +1,18 @@
 import type { RedisOptions } from 'ioredis';
 import * as ioredisStore from 'cache-manager-ioredis';
-import { CacheModule, Logger, Module } from '@nestjs/common';
 import { NecordModule } from 'necord';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { HotShotsModule } from 'nestjs-hot-shots';
+import { ScheduleModule } from '@nestjs/schedule';
+import { CacheModule, Logger, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BotUpdate } from './bot.update';
 import { InformationModule } from './information/information.module';
 import { EmotionsModule } from './emotions/emotions.module';
 import { ModerationModule } from './moderation/moderation.module';
-import { VoiceModule } from './voice/voice.module';
+import { TempChannelsModule } from './temp-channels/temp-channels.module';
 import { WelcomeModule } from './welcome/welcome.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { BotMetrics } from './bot.metrics';
-import { HotShotsModule } from 'nestjs-hot-shots';
-import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
 	imports: [
@@ -36,7 +36,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 				port: configService.get('POSTGRES_PORT', 5432),
 				database: configService.get('POSTGRES_DATABASE', 'postgres'),
 				username: configService.get('POSTGRES_USERNAME', 'postgres'),
-				password: configService.get('POSTGRES_PASSWORD'),
+				password: configService.get('POSTGRES_PASSWORD', 'postgres'),
 				synchronize: configService.get('NODE_ENV', 'development') === 'development',
 				autoLoadEntities: true
 			})
@@ -44,7 +44,6 @@ import { ScheduleModule } from '@nestjs/schedule';
 		NecordModule.forRootAsync({
 			useFactory: (configService: ConfigService) => ({
 				token: configService.get('DISCORD_TOKEN'),
-				registerApplicationCommands: configService.get('DISCORD_DEV_GUILD', true),
 				intents: [
 					'GUILD_BANS',
 					'GUILDS',
@@ -52,13 +51,22 @@ import { ScheduleModule } from '@nestjs/schedule';
 					'DIRECT_MESSAGES',
 					'GUILD_VOICE_STATES',
 					'GUILD_MEMBERS'
-				]
+				],
+				presence: {
+					activities: [
+						{
+							name: 'https://miko.bot | /help',
+							type: 'WATCHING',
+							url: 'https://miko.bot'
+						}
+					]
+				}
 			}),
 			inject: [ConfigService]
 		}),
 		HotShotsModule.forRootAsync({
 			useFactory: (configService: ConfigService) => ({
-				// mock: configService.get('NODE_ENV', 'development') === 'development',
+				mock: configService.get('NODE_ENV', 'development') === 'development',
 				host: configService.get('STATSD_HOST', 'localhost'),
 				port: configService.get('STATSD_PORT', 8125),
 				prefix: 'miko.',
@@ -75,7 +83,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 		EmotionsModule,
 		ModerationModule,
 		InformationModule,
-		VoiceModule,
+		TempChannelsModule,
 		WelcomeModule
 	],
 	providers: [BotUpdate, BotMetrics]

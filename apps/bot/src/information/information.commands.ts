@@ -1,18 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { Context, Options, SlashCommand, UserCommand } from 'necord';
 import { Client, CommandInteraction, ContextMenuInteraction, MessageEmbed, User } from 'discord.js';
-import { Color } from '../../../../libs/common/src/enums/embed-colors.enum';
+import { Color } from "@miko/common";
 
 @Injectable()
 export class InformationCommands {
 	public constructor(private readonly client: Client) {}
 
-	@UserCommand({ name: 'Get user avatar' })
-	public onUserAvatar(@Context() interaction: ContextMenuInteraction, @Options('user') user: User) {
+	@UserCommand('Get user avatar')
+	public onUserAvatar(@Context() [interaction]: [ContextMenuInteraction], @Options('user') user: User) {
 		return interaction.reply({
 			embeds: [
 				new MessageEmbed()
-					.setAuthor(interaction.user.tag, interaction.user.avatarURL())
+					.setAuthor({ name: interaction.user.tag, iconURL: interaction.user.avatarURL() })
 					.setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
 					.setColor(Color.MAGENTA)
 			],
@@ -20,7 +20,7 @@ export class InformationCommands {
 		});
 	}
 
-	@SlashCommand({ name: 'help', description: 'Get useful links of Miko bot.' })
+	@SlashCommand('help', 'Get useful links of Miko bot.')
 	public onLinks(@Context() interaction: CommandInteraction) {
 		return interaction.reply({
 			embeds: [

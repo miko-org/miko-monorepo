@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 export enum WelcomeChannelType {
 	DM,
@@ -11,17 +11,17 @@ export class WelcomeConfig {
 	public guildId: string;
 
 	@Column({ type: 'varchar', default: {}, array: true })
-	public roles: string[] = [];
+	public roles?: string[] = [];
 
 	@Column({ type: 'boolean', default: false })
-	public saveRoles = false;
+	public saveRoles?: boolean = false;
 
 	@Column({ type: 'integer', default: null, nullable: true })
-	public channelType: WelcomeChannelType = null;
+	public channelType?: WelcomeChannelType = null;
 
 	@Column({ type: 'bigint', default: null, nullable: true })
-	public channel: string = null;
+	public channel?: string = null;
 
 	@Column({ type: 'varchar', default: null, nullable: true })
-	public message: string = null;
+	public message?: string = null;
 }

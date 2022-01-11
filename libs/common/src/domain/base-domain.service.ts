@@ -1,4 +1,4 @@
-import { BaseEntity, DeepPartial, Repository } from 'typeorm';
+import { DeepPartial, Repository } from 'typeorm';
 import { Guild } from 'discord.js';
 import { Cache } from 'cache-manager';
 
@@ -27,7 +27,6 @@ export abstract class BaseDomainService<T, R extends Repository<T> = Repository<
 		const cached = await this.cacheManager.get(this.getCacheKey(guildId));
 
 		if (cached) {
-			console.log('cached');
 			return cached;
 		}
 
