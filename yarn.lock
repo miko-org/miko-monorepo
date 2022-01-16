@@ -351,10 +351,10 @@
   resolved "https://registry.npmjs.org/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@nestjs/cli@8.1.8":
-  version "8.1.8"
-  resolved "https://registry.npmjs.org/@nestjs/cli/-/cli-8.1.8.tgz#8d8293f4138311001a0cdae8d2793b44013902a6"
-  integrity sha512-oafOYjh8SN1XlB2DNneK0ePjJSHmLVwhnqFux96HacnRxMyIPxFA0Wgpc/2qoBwejJD1BidlvTIcYvFAYNEs4A==
+"@nestjs/cli@8.2.0":
+  version "8.2.0"
+  resolved "https://registry.npmjs.org/@nestjs/cli/-/cli-8.2.0.tgz#1d0b5f23156d520f0c3fbb8f80d86d0f5f7af941"
+  integrity sha512-f5grQOgrRcfHfOUP94OWsMdVYy6bit0zRSxPZ5+tfsFWkiPWdcx5Ba2M2socTykkiNHruXBu07lYvcKh94do7Q==
   dependencies:
     "@angular-devkit/core" "13.1.2"
     "@angular-devkit/schematics" "13.1.2"
@@ -375,14 +375,14 @@
     tree-kill "1.2.2"
     tsconfig-paths "3.12.0"
     tsconfig-paths-webpack-plugin "3.5.2"
-    typescript "4.3.5"
-    webpack "5.65.0"
+    typescript "4.5.4"
+    webpack "5.66.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@8.2.4":
-  version "8.2.4"
-  resolved "https://registry.npmjs.org/@nestjs/common/-/common-8.2.4.tgz#a13f270a6ac2119b1a3f5aec0428fea535233bcb"
-  integrity sha512-zb6Y//Rd7tRsMsY2qDvX7qk/msr6sBid7V9YNvdePzGNYfMOvtwgNoqtHgbq2F6V4kCtMO7slmmM4/zptSghiQ==
+"@nestjs/common@8.2.5":
+  version "8.2.5"
+  resolved "https://registry.npmjs.org/@nestjs/common/-/common-8.2.5.tgz#6630d446ee6e925476d2401a71b647c00c75dfa9"
+  integrity sha512-8VOZmHcCyhBtfvxehDfudsCrNghUoqDpZA5W8d/PUhMgz4Y1eT0M2ENBIuxr3C3j1vLypFOo30La2ymfQlOC8Q==
   dependencies:
     axios "0.24.0"
     iterare "1.2.1"
@@ -399,10 +399,10 @@
     lodash "4.17.21"
     uuid "8.3.2"
 
-"@nestjs/core@8.2.4":
-  version "8.2.4"
-  resolved "https://registry.npmjs.org/@nestjs/core/-/core-8.2.4.tgz#d8cb54f7bd5530de1f162a649c2b63852c91c8df"
-  integrity sha512-CWyS5Rj5tUxwtTGKkGei+ii6CvkGNhuo5hbKGBkCK3McfAMwpCq2pYDjSEFAqn6R2ylL4H3U5H9WU6OWJD1cVw==
+"@nestjs/core@8.25":
+  version "8.2.5"
+  resolved "https://registry.npmjs.org/@nestjs/core/-/core-8.2.5.tgz#3c4322bf72bbb934909d5d43218b0f321ec949b8"
+  integrity sha512-R0vp0VlAQFP7qBTZMzMspwOCO6MpsMJON/MsrfHVGgZS5Sd5DInfboWhe2COPnAr+VAT0o4FAKObW08Pdb5hMg==
   dependencies:
     "@nuxtjs/opencollective" "0.3.2"
     fast-safe-stringify "2.1.1"
@@ -1968,10 +1968,10 @@ discord-api-types@^0.26.0:
   resolved "https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.26.0.tgz#0134c6ee919035f2075ac1af9cdc0898b8dae71d"
   integrity sha512-bnUltSHpQLzTVZTMjm+iNgVhAbtm5oAKHrhtiPaZoxprbm1UtuCZCsG0yXM61NamWfeSz7xnLvgFc50YzVJ5cQ==
 
-discord.js@13.5.1:
-  version "13.5.1"
-  resolved "https://registry.npmjs.org/discord.js/-/discord.js-13.5.1.tgz#c0af11c7bfdcf6ac3f6bf28c7d96855c0c6a8997"
-  integrity sha512-ejEG5MXzB0eda9Nt+VzqgdvDWVO5U/GynGzq6DRPLaCH1yyn2YRU9J+vCMl77pWA1rzYGX+b/9RI31x0wt3qXA==
+discord.js@13.6.0:
+  version "13.6.0"
+  resolved "https://registry.npmjs.org/discord.js/-/discord.js-13.6.0.tgz#d8a8a591dbf25cbcf9c783d5ddf22c4694860475"
+  integrity sha512-tXNR8zgsEPxPBvGk3AQjJ9ljIIC6/LOPjzKwpwz8Y1Q2X66Vi3ZqFgRHYwnHKC0jC0F+l4LzxlhmOJsBZDNg9g==
   dependencies:
     "@discordjs/builders" "^0.11.0"
     "@discordjs/collection" "^0.4.0"
@@ -2635,6 +2635,11 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.8"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
+
+graceful-fs@^4.2.9:
+  version "4.2.9"
+  resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
+  integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
 
 hard-rejection@^2.1.0:
   version "2.1.0"
@@ -4223,7 +4228,7 @@ release-it@14.12.1:
     os-name "4.0.1"
     parse-json "5.2.0"
     semver "7.3.5"
-    shelljs "0.8.5"
+    shelljs "0.8.4"
     update-notifier "5.1.0"
     url-join "4.0.1"
     uuid "8.3.2"
@@ -4338,10 +4343,10 @@ rxjs@6.6.7, rxjs@^6.6.0:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@7.5.1:
-  version "7.5.1"
-  resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.5.1.tgz#af73df343cbcab37628197f43ea0c8256f54b157"
-  integrity sha512-KExVEeZWxMZnZhUZtsJcFwz8IvPvgu4G2Z2QyqjZQzUGr32KDYuSxrEYO4w3tFFNbfLozcrKUTvTPi+E9ywJkQ==
+rxjs@7.5.2:
+  version "7.5.2"
+  resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.5.2.tgz#11e4a3a1dfad85dbf7fb6e33cbba17668497490b"
+  integrity sha512-PwDt186XaL3QN5qXj/H9DGyHhP3/RYYgZZwqBv9Tv8rsAaiwFH1IsJJlcgD37J7UW5a6O67qX0KWKS3/pu0m4w==
   dependencies:
     tslib "^2.1.0"
 
@@ -4914,11 +4919,6 @@ typeorm@0.2.41:
     yargs "^17.0.1"
     zen-observable-ts "^1.0.0"
 
-typescript@4.3.5:
-  version "4.3.5"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
-  integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
-
 typescript@4.5.4, typescript@^4.4.3:
   version "4.5.4"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
@@ -5075,10 +5075,10 @@ webpack-sources@^3.2.2:
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.2.tgz#d88e3741833efec57c4c789b6010db9977545260"
   integrity sha512-cp5qdmHnu5T8wRg2G3vZZHoJPN14aqQ89SyQ11NpGH5zEMDCclt49rzo+MaRazk7/UeILhAI+/sEtcM+7Fr0nw==
 
-webpack@5.65.0:
-  version "5.65.0"
-  resolved "https://registry.npmjs.org/webpack/-/webpack-5.65.0.tgz#ed2891d9145ba1f0d318e4ea4f89c3fa18e6f9be"
-  integrity sha512-Q5or2o6EKs7+oKmJo7LaqZaMOlDWQse9Tm5l1WAfU/ujLGN5Pb0SqGeVkN/4bpPmEqEP5RnVhiqsOtWtUVwGRw==
+webpack@5.66.0:
+  version "5.66.0"
+  resolved "https://registry.npmjs.org/webpack/-/webpack-5.66.0.tgz#789bf36287f407fc92b3e2d6f978ddff1bfc2dbb"
+  integrity sha512-NJNtGT7IKpGzdW7Iwpn/09OXz9inIkeIQ/ibY6B+MdV1x6+uReqz/5z1L89ezWnpPDWpXF0TY5PCYKQdWVn8Vg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.50"
@@ -5094,7 +5094,7 @@ webpack@5.65.0:
     eslint-scope "5.1.1"
     events "^3.2.0"
     glob-to-regexp "^0.4.1"
-    graceful-fs "^4.2.4"
+    graceful-fs "^4.2.9"
     json-parse-better-errors "^1.0.2"
     loader-runner "^4.2.0"
     mime-types "^2.1.27"
