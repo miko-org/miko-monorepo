@@ -44,7 +44,7 @@ export class BotMetrics {
 	@Cron(CronExpression.EVERY_30_SECONDS)
 	public getChannelCount() {
 		const [text, voice] = this.client.channels.cache.partition(channel => channel.isText());
-		this.metrics.gauge('channels.temp-channels.size', voice.size);
+		this.metrics.gauge('channels.voice.size', voice.size);
 		this.metrics.gauge('channels.text.size', text.size);
 	}
 

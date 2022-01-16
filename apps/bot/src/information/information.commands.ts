@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Context, Options, SlashCommand, UserCommand } from 'necord';
 import { Client, CommandInteraction, ContextMenuInteraction, MessageEmbed, User } from 'discord.js';
-import { Color } from "@miko/common";
+import { Color } from '@miko/common';
 
 @Injectable()
 export class InformationCommands {

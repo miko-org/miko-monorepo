@@ -35,14 +35,14 @@ export abstract class BaseDomainService<T, R extends Repository<T> = Repository<
 		return result;
 	}
 
-	public async save(entity: T) {
+	public async save(entity: DeepPartial<T>) {
 		const result = await this.repository.save(entity);
-		await this.evict(this.repository.getId(entity));
+		await this.evict(this.repository.getId(result));
 		return result;
 	}
 
 	public async evict(guildId: string) {
-		if (this.isCacheable) {
+		if (this.isCacheable && guildId) {
 			await this.cacheManager.del(this.getCacheKey(guildId));
 		}
 	}

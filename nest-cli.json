@@ -37,6 +37,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/api/tsconfig.app.json"
       }
+    },
+    "communication": {
+      "type": "library",
+      "root": "libs/communication",
+      "entryFile": "index",
+      "sourceRoot": "libs/communication/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/communication/tsconfig.lib.json"
+      }
     }
   }
 }

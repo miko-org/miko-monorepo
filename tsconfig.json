@@ -19,6 +19,12 @@
       ],
       "@miko/common/*": [
         "libs/common/src/*"
+      ],
+      "@miko/communication": [
+        "libs/communication/src"
+      ],
+      "@miko/communication/*": [
+        "libs/communication/src/*"
       ]
     }
   },

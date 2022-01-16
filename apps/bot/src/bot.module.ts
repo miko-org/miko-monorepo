@@ -13,10 +13,12 @@ import { ModerationModule } from './moderation/moderation.module';
 import { TempChannelsModule } from './temp-channels/temp-channels.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { BotMetrics } from './bot.metrics';
+import { CommunicationModule } from '@miko/communication';
 
 @Module({
 	imports: [
 		ConfigModule.forRoot({ isGlobal: true, cache: true, ignoreEnvFile: true }),
+		CommunicationModule,
 		CacheModule.registerAsync<RedisOptions>({
 			isGlobal: true,
 			useFactory: (configService: ConfigService) => ({
