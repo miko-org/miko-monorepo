@@ -25,6 +25,12 @@
       ],
       "@miko/communication/*": [
         "libs/communication/src/*"
+      ],
+      "@miko/core": [
+        "libs/core/src"
+      ],
+      "@miko/core/*": [
+        "libs/core/src/*"
       ]
     }
   },

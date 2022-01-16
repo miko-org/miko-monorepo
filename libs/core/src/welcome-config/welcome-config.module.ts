@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { createCacheableDomainProvider } from '../../providers';
+import { createCacheableDomainProvider } from '@miko/common/providers';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { WelcomeConfig } from './welcome-config.entity';
 import { WelcomeConfigService } from './welcome-config.service';

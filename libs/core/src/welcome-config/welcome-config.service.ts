@@ -1,9 +1,9 @@
 import { Inject, Injectable, CACHE_MANAGER } from '@nestjs/common';
 import { Cache } from 'cache-manager';
-import { DOMAIN_IS_CACHEABLE } from '../../providers';
+import { DOMAIN_IS_CACHEABLE } from '@miko/common/providers';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { WelcomeConfig } from '.';
+import { WelcomeConfig } from './index';
 import { BaseDomainService } from '../base-domain.service';
 
 @Injectable()
