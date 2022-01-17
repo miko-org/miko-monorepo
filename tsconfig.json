@@ -31,6 +31,18 @@
       ],
       "@miko/core/*": [
         "libs/core/src/*"
+      ],
+      "@miko/scheduler": [
+        "libs/scheduler/src"
+      ],
+      "@miko/scheduler/*": [
+        "libs/scheduler/src/*"
+      ],
+      "@miko/templates": [
+        "libs/templates/src"
+      ],
+      "@miko/templates/*": [
+        "libs/templates/src/*"
       ]
     }
   },

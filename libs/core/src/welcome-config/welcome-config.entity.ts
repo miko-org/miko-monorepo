@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { GuildEntity } from '@miko/common';
 
 export enum WelcomeChannelType {
 	DM,
@@ -6,10 +7,7 @@ export enum WelcomeChannelType {
 }
 
 @Entity()
-export class WelcomeConfig {
-	@PrimaryColumn({ type: 'bigint' })
-	public guildId: string;
-
+export class WelcomeConfig extends GuildEntity {
 	@Column({ type: 'varchar', default: {}, array: true })
 	public roles?: string[] = [];
 

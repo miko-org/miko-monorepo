@@ -1,13 +1,13 @@
 import { Inject, Injectable, CACHE_MANAGER } from '@nestjs/common';
 import { Cache } from 'cache-manager';
-import { DOMAIN_IS_CACHEABLE } from '@miko/common/providers';
+import { DOMAIN_IS_CACHEABLE } from '@miko/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { WelcomeConfig } from './index';
-import { BaseDomainService } from '../base-domain.service';
+import { CoreService } from '../core.service';
 
 @Injectable()
-export class WelcomeConfigService extends BaseDomainService<WelcomeConfig> {
+export class WelcomeConfigService extends CoreService<WelcomeConfig> {
 	public constructor(
 		@Inject(DOMAIN_IS_CACHEABLE)
 		protected readonly isCacheable: boolean,

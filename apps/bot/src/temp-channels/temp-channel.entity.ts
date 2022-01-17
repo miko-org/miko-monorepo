@@ -1,13 +1,8 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { ChannelEntity } from '@miko/common';
 
 @Entity()
-export class TempChannel {
-	@PrimaryColumn({ type: 'bigint' })
-	public channelId: string;
-
-	@Column({ type: 'bigint' })
-	public guildId: string;
-
+export class TempChannel extends ChannelEntity {
 	@Column({ type: 'bigint' })
 	public owner: string;
 

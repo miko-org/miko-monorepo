@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import { GuildEntity } from '@miko/common';
 
 @Entity()
-export class TempChannelsConfig {
-	@PrimaryColumn({ type: 'bigint' })
-	public guildId: string;
-
+export class TempChannelsConfig extends GuildEntity {
 	@Column({ type: 'bigint', default: null, nullable: true })
 	public manager: string = null;
 }

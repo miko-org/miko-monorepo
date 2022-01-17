@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TempChannelsConfigModule } from '@miko/common';
+import { TempChannelsConfigModule } from '@miko/core';
 import { TempChannelsCommands } from './temp-channels.commands';
 import { TempChannelsService } from './temp-channels.service';
 import { TempChannelsUpdate } from './temp-channels.update';

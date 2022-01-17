@@ -14,6 +14,8 @@ import { TempChannelsModule } from './temp-channels/temp-channels.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { BotMetrics } from './bot.metrics';
 import { CommunicationModule } from '@miko/communication';
+import { CoreModule } from '@miko/core/core.module';
+import { BullModule } from '@nestjs/bull';
 
 @Module({
 	imports: [
@@ -27,6 +29,17 @@ import { CommunicationModule } from '@miko/communication';
 				port: configService.get('REDIS_PORT', 6379),
 				username: configService.get('REDIS_USERNAME'),
 				password: configService.get('REDIS_PASSWORD')
+			}),
+			inject: [ConfigService]
+		}),
+		BullModule.forRootAsync({
+			useFactory: (configService: ConfigService) => ({
+				redis: {
+					host: configService.get('REDIS_HOST', 'localhost'),
+					port: configService.get('REDIS_PORT', 6379),
+					username: configService.get('REDIS_USERNAME'),
+					password: configService.get('REDIS_PASSWORD')
+				}
 			}),
 			inject: [ConfigService]
 		}),
@@ -80,6 +93,7 @@ import { CommunicationModule } from '@miko/communication';
 			}),
 			inject: [ConfigService]
 		}),
+		CoreModule,
 		ScheduleModule.forRoot(),
 		ConfigModule,
 		EmotionsModule,
