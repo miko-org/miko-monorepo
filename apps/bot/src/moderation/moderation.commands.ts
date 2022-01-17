@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Ctx, Guilds, SlashCommand } from 'necord';
 import { ModerationService } from './moderation.service';
-import { CommandInteraction, GuildMember } from "discord.js";
+import { CommandInteraction, GuildMember } from 'discord.js';
 
 @Injectable()
 export class ModerationCommands {

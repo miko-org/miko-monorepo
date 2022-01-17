@@ -14,7 +14,7 @@ export class WelcomeCommands {
 		const resolver = new MapPlaceholderResolver();
 		resolver.set('member.mention', interaction.member.toString());
 		resolver.set('member.name', interaction.member.user.username);
-		resolver.set('member.roles', interaction.member.roles.toString())
+		resolver.set('member.roles', interaction.member.roles.toString());
 
 		return interaction.reply({
 			content: this.PLACHOLDER.replacePlaceholder('TEST {member.mention} {member.roles} XXX', resolver)

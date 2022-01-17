@@ -1,4 +1,4 @@
-import { PlaceholderResolver } from "../helpers";
+import { PlaceholderResolver } from '../helpers';
 
 export class MapPlaceholderResolver implements PlaceholderResolver {
 	private readonly values = new Map();
