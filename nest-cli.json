@@ -35,15 +35,6 @@
 				"tsConfigPath": "apps/api/tsconfig.app.json"
 			}
 		},
-		"communication": {
-			"type": "library",
-			"root": "libs/communication",
-			"entryFile": "index",
-			"sourceRoot": "libs/communication/src",
-			"compilerOptions": {
-				"tsConfigPath": "libs/communication/tsconfig.lib.json"
-			}
-		},
 		"core": {
 			"type": "library",
 			"root": "libs/core",
@@ -51,15 +42,6 @@
 			"sourceRoot": "libs/core/src",
 			"compilerOptions": {
 				"tsConfigPath": "libs/core/tsconfig.lib.json"
-			}
-		},
-		"scheduler": {
-			"type": "library",
-			"root": "libs/scheduler",
-			"entryFile": "index",
-			"sourceRoot": "libs/scheduler/src",
-			"compilerOptions": {
-				"tsConfigPath": "libs/scheduler/tsconfig.lib.json"
 			}
 		},
 		"templates": {

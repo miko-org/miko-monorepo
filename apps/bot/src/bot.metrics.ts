@@ -18,7 +18,7 @@ export class BotMetrics {
 				interaction.options.getSubcommandGroup(false),
 				interaction.options.getSubcommand(false)
 			]
-				.filter(x => !!x)
+				.filter(Boolean)
 				.join(' ')
 		});
 	}

@@ -1,6 +1,6 @@
-import { OnQueueCompleted, Process, Processor } from '@nestjs/bull';
+import { Process, Processor } from '@nestjs/bull';
 import { Logger } from '@nestjs/common';
-import { DoneCallback, Job } from 'bull';
+import { Job } from 'bull';
 import { Client } from 'discord.js';
 import { UnmuteJob } from './interfaces';
 
@@ -10,8 +10,9 @@ export class ModerationProcessor {
 
 	public constructor(private readonly client: Client) {}
 
-	@Process('unmute')
+	@Process({ name: 'unmute', concurrency: 5 })
 	public async handleUnmute(job: UnmuteJob) {
+		console.log(await job.getState());
 		const guild = await this.client.guilds.fetch(job.data.guildId);
 		const member = await guild.members.fetch(job.data.memberId);
 

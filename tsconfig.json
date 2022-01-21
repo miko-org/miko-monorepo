@@ -1,57 +1,45 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": false,
-    "removeComments": false,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "target": "es6",
-    "sourceMap": false,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "paths": {
-      "@miko/common": [
-        "libs/common/src"
-      ],
-      "@miko/common/*": [
-        "libs/common/src/*"
-      ],
-      "@miko/communication": [
-        "libs/communication/src"
-      ],
-      "@miko/communication/*": [
-        "libs/communication/src/*"
-      ],
-      "@miko/core": [
-        "libs/core/src"
-      ],
-      "@miko/core/*": [
-        "libs/core/src/*"
-      ],
-      "@miko/scheduler": [
-        "libs/scheduler/src"
-      ],
-      "@miko/scheduler/*": [
-        "libs/scheduler/src/*"
-      ],
-      "@miko/templates": [
-        "libs/templates/src"
-      ],
-      "@miko/templates/*": [
-        "libs/templates/src/*"
-      ]
-    }
-  },
-  "include": [
-    "apps/**/*",
-    "libs/**/*",
-    "migrations/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+		"noImplicitAny": false,
+		"noUnusedLocals": false,
+		"removeComments": false,
+		"noLib": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"resolveJsonModule": true,
+		"target": "es6",
+		"sourceMap": false,
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"paths": {
+			"@miko/common": [
+				"libs/common/src"
+			],
+			"@miko/common/*": [
+				"libs/common/src/*"
+			],
+			"@miko/core": [
+				"libs/core/src"
+			],
+			"@miko/core/*": [
+				"libs/core/src/*"
+			],
+			"@miko/templates": [
+				"libs/templates/src"
+			],
+			"@miko/templates/*": [
+				"libs/templates/src/*"
+			]
+		}
+	},
+	"include": [
+		"apps/**/*",
+		"libs/**/*",
+		"migrations/**/*"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }

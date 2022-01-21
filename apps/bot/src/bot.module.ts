@@ -13,14 +13,12 @@ import { ModerationModule } from './moderation/moderation.module';
 import { TempChannelsModule } from './temp-channels/temp-channels.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { BotMetrics } from './bot.metrics';
-import { CommunicationModule } from '@miko/communication';
 import { CoreModule } from '@miko/core/core.module';
 import { BullModule } from '@nestjs/bull';
 
 @Module({
 	imports: [
 		ConfigModule.forRoot({ isGlobal: true, cache: true, ignoreEnvFile: true }),
-		CommunicationModule,
 		CacheModule.registerAsync<RedisOptions>({
 			isGlobal: true,
 			useFactory: (configService: ConfigService) => ({
@@ -39,6 +37,10 @@ import { BullModule } from '@nestjs/bull';
 					port: configService.get('REDIS_PORT', 6379),
 					username: configService.get('REDIS_USERNAME'),
 					password: configService.get('REDIS_PASSWORD')
+				},
+				settings: {
+					lockDuration: 300000,
+					stalledInterval: 300000
 				}
 			}),
 			inject: [ConfigService]
@@ -59,6 +61,7 @@ import { BullModule } from '@nestjs/bull';
 		NecordModule.forRootAsync({
 			useFactory: (configService: ConfigService) => ({
 				token: configService.get('DISCORD_TOKEN'),
+				development: [configService.get('DISCORD_DEV_GUILD', undefined)],
 				intents: [
 					'GUILD_BANS',
 					'GUILDS',
