@@ -14,7 +14,6 @@
     "test": "echo test"
   },
   "dependencies": {
-    "@golevelup/nestjs-rabbitmq": "^1.19.0",
     "@nestjs/bull": "^0.4.2",
     "@nestjs/common": "8.2.5",
     "@nestjs/config": "1.1.6",

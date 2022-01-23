@@ -61,7 +61,7 @@ import { BullModule } from '@nestjs/bull';
 		NecordModule.forRootAsync({
 			useFactory: (configService: ConfigService) => ({
 				token: configService.get('DISCORD_TOKEN'),
-				development: [configService.get('DISCORD_DEV_GUILD', undefined)],
+				development: [configService.get('DISCORD_DEV_GUILD')],
 				intents: [
 					'GUILD_BANS',
 					'GUILDS',

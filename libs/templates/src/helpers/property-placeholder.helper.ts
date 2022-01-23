@@ -58,9 +58,7 @@ export class PropertyPlaceholderHelper {
 				const originalPlaceholder = placeholder;
 
 				if (!visitedPlaceholders.add(originalPlaceholder)) {
-					throw new Error(
-						"Circular placeholder reference '" + originalPlaceholder + "' in property definitions"
-					);
+					throw new Error(`Circular placeholder reference "${originalPlaceholder}" in property definitions`);
 				}
 
 				placeholder = this.parseStringValue(placeholder, placeholderResolver, visitedPlaceholders);
@@ -91,9 +89,7 @@ export class PropertyPlaceholderHelper {
 					// Proceed with unprocessed value.
 					startIndex = result.indexOf(this.placeholderPrefix, endIndex + this.placeholderSuffix.length);
 				} else {
-					throw new Error(
-						"Could not resolve placeholder '" + placeholder + "'" + ' in value "' + value + '"'
-					);
+					throw new Error(`Could not resolve placeholder "${placeholder}" in value "${value}"`);
 				}
 				visitedPlaceholders.delete(originalPlaceholder);
 			} else {

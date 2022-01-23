@@ -21,7 +21,7 @@ export class InformationCommands {
 	}
 
 	@SlashCommand('help', 'Get useful links of Miko bot.')
-	public onLinks(@Context() interaction: CommandInteraction) {
+	public onLinks(@Context() [interaction]: [CommandInteraction]) {
 		return interaction.reply({
 			embeds: [
 				new MessageEmbed()
