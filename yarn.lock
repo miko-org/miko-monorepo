@@ -3252,10 +3252,10 @@ neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-nestjs-hot-shots@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/nestjs-hot-shots/-/nestjs-hot-shots-2.0.3.tgz#eedcd8cc3490c2324a50f2c18e3141727fe3a78b"
-  integrity sha512-gvJAxiE4Lwxjg5VyxDf8lPhz3z5Y+38i/Wk0qFwbeVehx8EXXK4d7wypJjAFoTcE+aQtRRHMxfZAudKvvgz4pA==
+nestjs-hot-shots@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/nestjs-hot-shots/-/nestjs-hot-shots-2.0.4.tgz#e82f3e0416e9ee5c00f2b0b274e2066add4e560b"
+  integrity sha512-pyLYRLK+GudlDIn/Wqp+yHgPKk4sRFHihNLpnHS4NCun0aa+C78+r9hOrhKHDVI1vlV9rEhD3uAD03rUmEbxOw==
 
 new-github-release-url@1.0.0:
   version "1.0.0"
