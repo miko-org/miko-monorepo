@@ -1,6 +1,6 @@
 import { NestFactory, Reflector } from '@nestjs/core';
 import { BotModule } from './bot.module';
-import { CooldownGuard, NecordExceptionFilter, PermissionsGuard, sentrySetup } from "@miko/common";
+import { CooldownGuard, NecordExceptionFilter, PermissionsGuard, sentrySetup } from '@miko/common';
 
 const bootstrap = async () => {
 	const app = await NestFactory.create(BotModule);

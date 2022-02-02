@@ -19,7 +19,7 @@ export class PermissionsGuard implements CanActivate {
 		const [interaction] = necordContext.getContext<ContextOf<'interactionCreate'>>();
 
 		if (interaction instanceof CommandInteraction) {
-			this.times++
+			this.times++;
 			console.log(this.times, interaction.id, interaction.replied);
 		}
 
