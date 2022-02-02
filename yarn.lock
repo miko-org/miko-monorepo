@@ -3234,10 +3234,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-necord@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/necord/-/necord-4.1.0.tgz#1827f17d68f92614d380fe7646f655ebca129271"
-  integrity sha512-ceIXvMtIYLFoCWyeYRflxBiK/7VDqkyPpdiBIK2bNnfKuiqMrB6jOLfxaNNay83rsl9gSsWkz84yW2+Ss9pE6Q==
+necord@4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/necord/-/necord-4.2.4.tgz#ba8c384576fb59f3c7eaa46b717f4aa00159457a"
+  integrity sha512-1mWpVBrXecMAyJqP9KrPC96/lCxYFyrk6lYDTCu6emf0LkIbzZ6ATVsprezFTCtagC9+TUkPBgK9A1xYuK2ATA==
 
 neo-async@^2.6.2:
   version "2.6.2"
