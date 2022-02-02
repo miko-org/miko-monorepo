@@ -13,15 +13,20 @@ export class ModerationService {
 		private readonly configService: ConfigService
 	) {}
 
+	public async isModerator(member: GuildMember) {}
+
 	public async mute(member: GuildMember, roleId: string) {
-		if (!this.configService.get('MASTER', false)) return;
-
 		await member.roles.add(roleId);
-		const job = await this.moderationQueue.add('unmute', { guildId: member.guild.id, memberId: member.id, roleId });
-		const startedAt = performance.now();
 
-		await job.finished();
-		console.log('Arrived alter', performance.now() - startedAt);
+		await this.moderationQueue.add(
+			'unmute',
+			{
+				guildId: member.guild.id,
+				memberId: member.id,
+				roleId
+			},
+			{ jobId: `${member.guild.id}:${member.id}` }
+		);
 
 		return;
 	}

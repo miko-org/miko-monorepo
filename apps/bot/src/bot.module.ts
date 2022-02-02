@@ -1,5 +1,5 @@
 import type { RedisOptions } from 'ioredis';
-import * as ioredisStore from 'cache-manager-ioredis';
+import ioredisStore from 'cache-manager-ioredis';
 import { NecordModule } from 'necord';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HotShotsModule } from 'nestjs-hot-shots';
@@ -78,7 +78,8 @@ import { BullModule } from '@nestjs/bull';
 							url: 'https://miko.bot'
 						}
 					]
-				}
+				},
+				shardCount: 1
 			}),
 			inject: [ConfigService]
 		}),

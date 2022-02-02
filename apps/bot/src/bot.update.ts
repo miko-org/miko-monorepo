@@ -5,6 +5,11 @@ import { Context, ContextOf, On, Once } from 'necord';
 export class BotUpdate {
 	private readonly logger = new Logger(BotUpdate.name);
 
+	@On('debug')
+	public onDebug(@Context() [message]: ContextOf<'debug'>) {
+		this.logger.debug(message);
+	}
+
 	@Once('ready')
 	public onReady(@Context() [client]: ContextOf<'ready'>) {
 		this.logger.log(`Client is ready! Serving ${client.guilds.cache.size} guilds`);
@@ -17,7 +22,7 @@ export class BotUpdate {
 
 	@On('shardDisconnect')
 	public onShardDisconnect(@Context() [closeEvent, shardId]: ContextOf<'shardDisconnect'>) {
-		this.logger.log(`Shard ${shardId} was disconnected: ${closeEvent}`);
+		this.logger.log(`Shard ${shardId} was disconnected with code ${closeEvent.code}: ${closeEvent.reason}`);
 	}
 
 	@On('shardReconnecting')
@@ -33,5 +38,12 @@ export class BotUpdate {
 	@On('guildUnavailable')
 	public onGuildUnavailable(@Context() [guild]: ContextOf<'guildUnavailable'>) {
 		this.logger.log(`Guild ${guild.name ?? guild.id} is unavailable now`);
+	}
+
+	@On('rateLimit')
+	public onRateLimit(@Context() [rateLimit]: ContextOf<'rateLimit'>) {
+		this.logger.debug(
+			`Rate-limit exceed on ${rateLimit.path} with limit ${rateLimit.limit}, ${rateLimit.timeout}ms timeout`
+		);
 	}
 }

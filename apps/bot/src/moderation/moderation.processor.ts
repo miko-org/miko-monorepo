@@ -2,7 +2,7 @@ import { Process, Processor } from '@nestjs/bull';
 import { Logger } from '@nestjs/common';
 import { Job } from 'bull';
 import { Client } from 'discord.js';
-import { UnmuteJob } from './interfaces';
+import { UnbanJob, UnmuteJob } from './interfaces';
 
 @Processor('moderation')
 export class ModerationProcessor {
@@ -12,7 +12,10 @@ export class ModerationProcessor {
 
 	@Process({ name: 'unmute', concurrency: 5 })
 	public async handleUnmute(job: UnmuteJob) {
-		console.log(await job.getState());
+		if (!this.client.isReady()) {
+			throw new Error('Client not ready');
+		}
+
 		const guild = await this.client.guilds.fetch(job.data.guildId);
 		const member = await guild.members.fetch(job.data.memberId);
 
@@ -20,7 +23,14 @@ export class ModerationProcessor {
 	}
 
 	@Process('unban')
-	public async handleUnban(job: Job) {}
+	public async handleUnban(job: UnbanJob) {
+		if (!this.client.isReady()) {
+			throw new Error('Client not ready');
+		}
+
+		const guild = await this.client.guilds.fetch(job.data.guildId);
+		return guild.members.unban(job.data.memberId);
+	}
 
 	@Process('unwarn')
 	public async handleUnwarn(job: Job) {}

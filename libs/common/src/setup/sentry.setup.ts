@@ -1,7 +1,7 @@
 import { INestApplicationContext } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import * as Sentry from '@sentry/node';
-import * as PackageJson from '../../../../package.json';
+import Sentry from '@sentry/node';
+import PackageJson from '../../../../package.json';
 
 export function sentrySetup(app: INestApplicationContext, instance = 'miko-bot') {
 	const configService = app.get(ConfigService);

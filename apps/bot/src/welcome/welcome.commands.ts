@@ -1,4 +1,4 @@
-import { SlashGroup, Context, SlashCommand } from 'necord';
+import { Context, SlashCommand, SlashGroup } from 'necord';
 import { CommandInteraction } from 'discord.js';
 import { WelcomeChannelType, WelcomeConfigService } from '@miko/core';
 import { MapPlaceholderResolver, PropertyPlaceholderHelper } from '@miko/templates';

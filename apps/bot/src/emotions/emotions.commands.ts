@@ -1,10 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Ctx, Opts, SlashCommand, SlashGroup } from 'necord';
 import { Client, CommandInteraction, GuildMember } from 'discord.js';
-import { DevGuild } from '@miko/common';
 import { EmotionsService } from './emotions.service';
 
-@DevGuild
 @Injectable()
 @SlashGroup('emote', 'Show your emotions through GIFs')
 export class EmotionsCommands {
