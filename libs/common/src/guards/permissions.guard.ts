@@ -10,18 +10,11 @@ export const BotPermissions = () => SetMetadata(PERMISSIONS_METADATA, {});
 
 @Injectable()
 export class PermissionsGuard implements CanActivate {
-	private times = 0;
-
 	public constructor(private readonly reflector: Reflector) {}
 
 	public async canActivate(context: ExecutionContext): Promise<boolean> {
 		const necordContext = NecordExecutionContext.create(context);
 		const [interaction] = necordContext.getContext<ContextOf<'interactionCreate'>>();
-
-		if (interaction instanceof CommandInteraction) {
-			this.times++;
-			console.log(this.times, interaction.id, interaction.replied);
-		}
 
 		// if (interaction instanceof CommandInteraction && interaction?.isApplicationCommand()) {
 		// 	throw new NecordException('bla-bla');

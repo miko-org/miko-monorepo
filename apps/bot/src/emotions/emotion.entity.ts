@@ -11,4 +11,10 @@ export class Emotion extends BaseEntity {
 
 	@Column({ type: 'varchar', array: true })
 	public urls: string[];
+
+	@Column({ type: 'varchar' })
+	public himself: string;
+
+	@Column({ type: 'varchar' })
+	public together: string;
 }

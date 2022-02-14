@@ -13,7 +13,7 @@ import { ModerationModule } from './moderation/moderation.module';
 import { TempChannelsModule } from './temp-channels/temp-channels.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { BotMetrics } from './bot.metrics';
-import { CoreModule } from '@miko/core/core.module';
+import { CoreModule } from '@miko/core';
 import { BullModule } from '@nestjs/bull';
 
 @Module({

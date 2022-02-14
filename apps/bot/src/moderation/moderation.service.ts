@@ -3,14 +3,12 @@ import { InjectQueue } from '@nestjs/bull';
 import { Queue } from 'bull';
 import { GuildMember } from 'discord.js';
 import { UnbanJobData, UnMuteJobData } from './interfaces';
-import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class ModerationService {
 	public constructor(
 		@InjectQueue('moderation')
-		private readonly moderationQueue: Queue<UnMuteJobData | UnbanJobData>,
-		private readonly configService: ConfigService
+		private readonly moderationQueue: Queue<UnMuteJobData | UnbanJobData>
 	) {}
 
 	public async isModerator(member: GuildMember) {}

@@ -5,7 +5,7 @@ import { MapPlaceholderResolver, PropertyPlaceholderHelper } from '@miko/templat
 
 @SlashGroup('welcome', 'we asde')
 export class WelcomeCommands {
-	private readonly PLACHOLDER = new PropertyPlaceholderHelper('{', '}');
+	private readonly PLACEHOLDER = new PropertyPlaceholderHelper('{', '}');
 
 	public constructor(private readonly welcomeConfigService: WelcomeConfigService) {}
 
@@ -17,7 +17,7 @@ export class WelcomeCommands {
 		resolver.set('member.roles', interaction.member.roles.toString());
 
 		return interaction.reply({
-			content: this.PLACHOLDER.replacePlaceholder('TEST {member.mention} {member.roles} XXX', resolver)
+			content: this.PLACEHOLDER.replacePlaceholder('TEST {member.mention} {member.roles} XXX', resolver)
 		});
 	}
 
