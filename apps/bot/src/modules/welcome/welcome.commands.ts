@@ -1,7 +1,7 @@
 import { Context, SlashCommand, SlashGroup } from 'necord';
 import { CommandInteraction } from 'discord.js';
 import { WelcomeChannelType, WelcomeConfigService } from '@miko/core';
-import { MapPlaceholderResolver, PropertyPlaceholderHelper } from "@miko/common";
+import { MapPlaceholderResolver, PropertyPlaceholderHelper } from '@miko/common';
 
 @SlashGroup('welcome', 'we asde')
 export class WelcomeCommands {
