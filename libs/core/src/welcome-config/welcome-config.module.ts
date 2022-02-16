@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
-import { createCacheableDomainProvider } from '@miko/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { WelcomeConfig } from './welcome-config.entity';
 import { WelcomeConfigService } from './welcome-config.service';
 
 @Module({
 	imports: [TypeOrmModule.forFeature([WelcomeConfig])],
-	providers: [WelcomeConfigService, createCacheableDomainProvider('CACHEABLE_WELCOME_SETTINGS')],
+	providers: [WelcomeConfigService],
 	exports: [WelcomeConfigService]
 })
 export class WelcomeConfigModule {}

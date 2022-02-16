@@ -3,8 +3,6 @@ import { Guild } from 'discord.js';
 import { Cache } from 'cache-manager';
 
 export abstract class CoreService<T, R extends Repository<T> = Repository<T>> {
-	protected abstract isCacheable: boolean;
-
 	protected abstract cacheManager: Cache;
 
 	protected abstract repository: R;
@@ -20,10 +18,6 @@ export abstract class CoreService<T, R extends Repository<T> = Repository<T>> {
 	}
 
 	public async findByGuildId(guildId: string) {
-		if (!this.isCacheable) {
-			return this.repository.findOne(guildId);
-		}
-
 		const cached = await this.cacheManager.get(this.getCacheKey(guildId));
 
 		if (cached) {
@@ -46,7 +40,7 @@ export abstract class CoreService<T, R extends Repository<T> = Repository<T>> {
 	}
 
 	public async evict(guildId: string) {
-		if (this.isCacheable && guildId) {
+		if (guildId) {
 			await this.cacheManager.del(this.getCacheKey(guildId));
 		}
 	}

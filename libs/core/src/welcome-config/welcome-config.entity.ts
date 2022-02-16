@@ -18,7 +18,7 @@ export class WelcomeConfig extends GuildEntity {
 	public channelType?: WelcomeChannelType = null;
 
 	@Column({ type: 'bigint', default: null, nullable: true })
-	public channel?: string = null;
+	public channelId?: string = null;
 
 	@Column({ type: 'varchar', default: null, nullable: true })
 	public message?: string = null;

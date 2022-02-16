@@ -1,13 +1,9 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { ApiController } from './api.controller';
-import { ApiService } from './api.service';
-import { BloodTearsMiddleware } from '@miko/common';
+import { BloodTearsMiddleware } from './middlewares';
 import helmet from 'helmet';
 
 @Module({
-	imports: [],
-	controllers: [ApiController],
-	providers: [ApiService]
+	imports: []
 })
 export class ApiModule implements NestModule {
 	public configure(consumer: MiddlewareConsumer) {
