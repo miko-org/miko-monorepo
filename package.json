@@ -22,7 +22,7 @@
     "@nestjs/platform-express": "8.3.0",
     "@nestjs/schedule": "1.0.2",
     "@nestjs/typeorm": "8.0.3",
-    "@sentry/node": "6.17.8",
+    "@sentry/node": "6.18.2",
     "bull": "4.5.5",
     "cache-manager": "3.6.0",
     "cache-manager-ioredis": "2.1.0",
