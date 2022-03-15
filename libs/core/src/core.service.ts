@@ -1,55 +1,47 @@
-import { DeepPartial, Repository } from 'typeorm';
+import { Connection, DeepPartial, Repository } from 'typeorm';
 import { Guild } from 'discord.js';
-import { Cache } from 'cache-manager';
+import { GuildEntity, GuildRepository } from '@miko/common';
 
-export abstract class CoreService<T, R extends Repository<T> = Repository<T>> {
-	protected abstract cacheManager: Cache;
-
-	protected abstract repository: R;
-
-	protected abstract createNew(guildId: string): T;
-
-	public findOne(guild: Guild) {
+export abstract class CoreService<T extends GuildEntity> extends GuildRepository<T> {
+	public findByGuild(guild: Guild) {
 		return this.findByGuildId(guild.id);
 	}
 
-	public findById(id: string) {
-		return this.repository.findOne(id);
+	public findById(id: T['id']) {
+		return this.findOne(id);
 	}
 
-	public async findByGuildId(guildId: string) {
-		const cached = await this.cacheManager.get(this.getCacheKey(guildId));
-
-		if (cached) {
-			return cached;
-		}
-
-		const result = await this.repository.findOne(guildId);
-		await this.cacheManager.set(this.getCacheKey(guildId), result, { ttl: 1000 });
-		return result;
+	public async findByGuildId(guildId: T['guildId']) {
+		return this.findOne({
+			where: { guildId },
+			cache: { id: this.getCacheKey(guildId), milliseconds: 10000 }
+		});
 	}
 
-	public async save(entity: DeepPartial<T>) {
-		const result = await this.repository.save(entity);
-		await this.evict(this.repository.getId(result));
-		return result;
+	public async save(entity) {
+		return super.save(entity).then(async result => {
+			await this.evict(result.guildId);
+			return result;
+		});
 	}
 
 	public async exists(guildId: string) {
-		return this.repository.count();
+		return this.findOneOrFail({ where: { guildId } })
+			.then(() => true)
+			.catch(() => false);
 	}
 
-	public async evict(guildId: string) {
-		if (guildId) {
-			await this.cacheManager.del(this.getCacheKey(guildId));
-		}
+	public async evict(...guildIds: string[]) {
+		await this.manager.connection.queryResultCache.remove(guildIds.map(guildId => this.getCacheKey(guildId)));
 	}
 
-	public async findOrCreate(guildId: string) {
+	public async findOrCreate(guildId: T['guildId']) {
 		return (await this.findByGuildId(guildId)) ?? (await this.save(this.createNew(guildId)));
 	}
 
 	protected getCacheKey(id: string) {
-		return [this.repository.metadata.name, id].join(':');
+		return [this.constructor.name, id].join(':');
 	}
+
+	protected abstract createNew(guildId: string): DeepPartial<T>;
 }

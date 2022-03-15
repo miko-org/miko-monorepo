@@ -11,10 +11,9 @@ services:
     container_name: 'postgres'
     restart: unless-stopped
     environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      DATABASE_USER: postgres
-      DATABASE_DATABASE: postgres
-      DATABASE_PASSWORD: postgres
     ports:
       - "5432:5432"
 

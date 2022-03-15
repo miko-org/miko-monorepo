@@ -16,7 +16,12 @@ export class EmotionAutocomplete implements TransformOptions {
 		interaction: AutocompleteInteraction,
 		focused: ApplicationCommandOptionChoice
 	): Promise<ApplicationCommandOptionChoice[]> {
-		const emotions = await this.emotionsRepository.find();
+		const emotions = await this.emotionsRepository.find({
+			cache: {
+				id: 'emotions:all',
+				milliseconds: 1000 * 60 * 60
+			}
+		});
 
 		return emotions.map(emote => ({ name: emote.name, value: emote.id }));
 	}

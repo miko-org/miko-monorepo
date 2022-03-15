@@ -1,7 +1,8 @@
 import { NecordModuleOptions, NecordOptionsFactory } from 'necord';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-
+import { Intents } from 'discord.js';
+Intents.FLAGS.GUILD_PRESENCES;
 @Injectable()
 export class NecordConfigService implements NecordOptionsFactory {
 	public constructor(private readonly configService: ConfigService) {}

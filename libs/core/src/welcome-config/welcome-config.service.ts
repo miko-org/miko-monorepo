@@ -1,24 +1,20 @@
-import { Inject, Injectable, CACHE_MANAGER } from '@nestjs/common';
-import { Cache } from 'cache-manager';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { EntityRepository } from 'typeorm';
 import { WelcomeConfig } from './index';
 import { CoreService } from '../core.service';
 
-@Injectable()
+@EntityRepository(WelcomeConfig)
 export class WelcomeConfigService extends CoreService<WelcomeConfig> {
-	public constructor(
-		@Inject(CACHE_MANAGER)
-		protected readonly cacheManager: Cache,
-		@InjectRepository(WelcomeConfig)
-		protected readonly repository: Repository<WelcomeConfig>
-	) {
-		super();
-	}
-
 	protected createNew(guildId: string): WelcomeConfig {
-		return this.repository.create({
+		return this.create({
 			guildId
 		});
+	}
+
+	existsByGuildId(guildId: string): Promise<boolean> {
+		return Promise.resolve(false);
+	}
+
+	findAllByGuildId(guildId: string): Promise<WelcomeConfig[]> {
+		return Promise.resolve([]);
 	}
 }

@@ -1,24 +1,22 @@
-import { Inject, Injectable, CACHE_MANAGER } from '@nestjs/common';
-import { Cache } from 'cache-manager';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Connection, EntityRepository, Repository } from 'typeorm';
 import { CoreService } from '../core.service';
 import { TempChannelsConfig } from './temp-channels-config.entity';
 
-@Injectable()
+@EntityRepository(TempChannelsConfig)
 export class TempChannelsConfigService extends CoreService<TempChannelsConfig> {
-	public constructor(
-		@Inject(CACHE_MANAGER)
-		protected readonly cacheManager: Cache,
-		@InjectRepository(TempChannelsConfig)
-		protected readonly repository: Repository<TempChannelsConfig>
-	) {
-		super();
-	}
-
 	protected createNew(guildId: string): TempChannelsConfig {
-		return this.repository.create({
+		return this.create({
 			guildId
 		});
+	}
+
+	existsByGuildId(guildId: string): Promise<boolean> {
+		return Promise.resolve(false);
+	}
+
+	findAllByGuildId(guildId: string): Promise<TempChannelsConfig[]> {
+		return Promise.resolve([]);
 	}
 }
