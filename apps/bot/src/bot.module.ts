@@ -7,7 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import { BullModule } from '@nestjs/bull';
 import { BotUpdate } from './bot.update';
 import { BotMetrics } from './bot.metrics';
-import { EmotionsModule, InformationModule, ModerationModule, TempChannelsModule, WelcomeModule } from './modules';
+import { EmotionsModule, GeneralModule, ModerationModule, TempChannelsModule, WelcomeModule } from './modules';
 import {
 	BullConfigService,
 	CacheConfigService,
@@ -27,7 +27,7 @@ import {
 		NecordModule.forRootAsync({ useClass: NecordConfigService }),
 		HotShotsModule.forRootAsync({ useClass: HotShotsConfigService }),
 		EmotionsModule,
-		InformationModule,
+		GeneralModule,
 		ModerationModule,
 		TempChannelsModule,
 		WelcomeModule

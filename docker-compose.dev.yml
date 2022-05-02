@@ -1,17 +1,17 @@
 version: '3.7'
 services:
   redis:
-    image: redis:6.2.6-alpine
+    image: redis:6.0.9-alpine
     container_name: 'redis'
     restart: unless-stopped
     ports:
       - "6379:6379"
   postgres:
-    image: postgres:14.1-alpine
+    image: postgres:13.1-alpine
     container_name: 'postgres'
     restart: unless-stopped
     environment:
-      POSTGRES_DB: postgres
+      POSTGRES_DB: miko
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:

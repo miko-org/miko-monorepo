@@ -1,1 +1,1 @@
-export * from './necord-exception.filter';
+export * from './common-exception.filter';

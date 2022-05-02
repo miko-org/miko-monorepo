@@ -4,7 +4,7 @@ import { Client, CommandInteraction, ContextMenuInteraction, MessageEmbed, User 
 import { Color } from '@miko/common/services/message.service';
 
 @Injectable()
-export class InformationCommands {
+export class GeneralCommands {
 	public constructor(private readonly client: Client) {}
 
 	@UserCommand('Get user avatar')
