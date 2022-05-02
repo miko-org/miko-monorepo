@@ -6,4 +6,4 @@ export * from './repositories';
 export * from './services';
 export * from './utils';
 
-export * from './common.exception'
+export * from './common.exception';
