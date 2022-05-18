@@ -4068,9 +4068,9 @@ natural-compare@^1.4.0:
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
 necord@dev:
-  version "5.0.0-dev.1651467168.b24948e"
-  resolved "https://registry.npmjs.org/necord/-/necord-5.0.0-dev.1651467168.b24948e.tgz#3f65490f5649d66fc50dad9e68999a42f256b244"
-  integrity sha512-96miDzLl4/EVNfbyu+OSOM72MAvGASNQnm4L2IuYK6y4UQNKYXvdFO+WKmmBSkrQTP13j22hERr3s63d0lSZGw==
+  version "5.0.0-dev.1652835796.06e285f"
+  resolved "https://registry.yarnpkg.com/necord/-/necord-5.0.0-dev.1652835796.06e285f.tgz#78d7b6d54af3c227f0c10628dff3633621bfc9c6"
+  integrity sha512-1bMZzKEqZi54BAkQQCfyVHdL9uCQa8ad/B7G8/frezcE5XEARbltySpf/84nk0qFiJt8c15/oajv41tSa/12yg==
   dependencies:
     "@golevelup/nestjs-discovery" "3.0.0"
 
