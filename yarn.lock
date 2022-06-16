@@ -273,13 +273,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@golevelup/nestjs-discovery@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@golevelup/nestjs-discovery/-/nestjs-discovery-3.0.0.tgz#7c821924c2a8148928ef9bb0e9b995799b3087c8"
-  integrity sha512-ZvkXtobTKxXB1LJanP/l6Z/Fing88IMBr3uabQpU2IWjfsstjh02qYDSU2cfD6CSmNldX5ewW5Pd+SdK2lU8Sw==
-  dependencies:
-    lodash "^4.17.15"
-
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
@@ -1478,10 +1471,10 @@ buffer@^6.0.3:
     base64-js "^1.3.1"
     ieee754 "^1.2.1"
 
-bull@4.8.2:
-  version "4.8.2"
-  resolved "https://registry.npmjs.org/bull/-/bull-4.8.2.tgz#0d02fe389777abe29d50fd46d123bc62e074cfcd"
-  integrity sha512-S7CNIL9+vsbLKwOGkUI6mawY5iABKQJLZn5a7KPnxAZrDhFXkrxsHHXLCKUR/+Oqys3Vk5ElWdj0SLtK84b1Nw==
+bull@4.8.3:
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/bull/-/bull-4.8.3.tgz#4ab67029fee1183dcb7185895b20dc08c02d6bf2"
+  integrity sha512-oOHr+KTLu3JM5V9TXsg18/1xyVQceoYCFiGrXZOpu9abZn3W3vXJtMBrwB6Yvl/RxSKVVBpoa25RF/ya3750qg==
   dependencies:
     cron-parser "^4.2.1"
     debuglog "^1.0.0"
@@ -4102,11 +4095,9 @@ natural-compare@^1.4.0:
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
 necord@dev:
-  version "5.0.0-dev.1653049833.154cd63"
-  resolved "https://registry.yarnpkg.com/necord/-/necord-5.0.0-dev.1653049833.154cd63.tgz#4653359e7b48e494f020d4681657b9eb98224219"
-  integrity sha512-2L5/vBt+Sbt5RWL18v6yPLUhNytcAP2DJdVaJfD2vVcSE5c8jF9ju3pny2hHboU1lSkJ8eidC4Mb8XvRRZ01lw==
-  dependencies:
-    "@golevelup/nestjs-discovery" "3.0.0"
+  version "5.0.0-dev.1655342207.4e0c341"
+  resolved "https://registry.yarnpkg.com/necord/-/necord-5.0.0-dev.1655342207.4e0c341.tgz#b3c96e47c4d274dfd6d755563eeb6b538969f06e"
+  integrity sha512-VFcNq3sVb7bZZEW0n4owEBizNy18XFjNmF1XiSNbJDKd1M2xYmdc/l/JbhNwHI6qFsep7RhCNns0sYUkj9QDlw==
 
 negotiator@0.6.3:
   version "0.6.3"
