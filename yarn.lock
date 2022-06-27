@@ -273,13 +273,6 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@golevelup/nestjs-discovery@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@golevelup/nestjs-discovery/-/nestjs-discovery-3.0.0.tgz#7c821924c2a8148928ef9bb0e9b995799b3087c8"
-  integrity sha512-ZvkXtobTKxXB1LJanP/l6Z/Fing88IMBr3uabQpU2IWjfsstjh02qYDSU2cfD6CSmNldX5ewW5Pd+SdK2lU8Sw==
-  dependencies:
-    lodash "^4.17.15"
-
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
@@ -4068,11 +4061,9 @@ natural-compare@^1.4.0:
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
 necord@dev:
-  version "5.0.0-dev.1653049833.154cd63"
-  resolved "https://registry.yarnpkg.com/necord/-/necord-5.0.0-dev.1653049833.154cd63.tgz#4653359e7b48e494f020d4681657b9eb98224219"
-  integrity sha512-2L5/vBt+Sbt5RWL18v6yPLUhNytcAP2DJdVaJfD2vVcSE5c8jF9ju3pny2hHboU1lSkJ8eidC4Mb8XvRRZ01lw==
-  dependencies:
-    "@golevelup/nestjs-discovery" "3.0.0"
+  version "5.0.0-dev.1656293199.ef8bb4f"
+  resolved "https://registry.yarnpkg.com/necord/-/necord-5.0.0-dev.1656293199.ef8bb4f.tgz#9d84af7e6ed5eee1c176e9b1f3a6590e215cc4a2"
+  integrity sha512-6woQ5Fan+/qw5ItQPRDLPgj2G6q7W7mzu2nk6r1eOwrkGgSgfYbyOiUScAaT7RqEIzyAUc531p033DOofZzXow==
 
 negotiator@0.6.3:
   version "0.6.3"
