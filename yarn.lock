@@ -299,20 +299,20 @@
   resolved "https://registry.npmjs.org/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@nestjs/bull-shared@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@nestjs/bull-shared/-/bull-shared-0.0.4.tgz#a738d7d7990824e8041a2addc2d99ff3fcfb8e3f"
-  integrity sha512-w+J04AffCMNiB48rIR5P61MvbgkIlq0Tvk4hE4Up+g20H8rhfnxbOyd9bWyLHtf8QhziK6JyViyGFLZ3meBRIA==
+"@nestjs/bull-shared@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/bull-shared/-/bull-shared-0.1.2.tgz#23efa4e4fb11dd464ecb9daa3f93ffe409c098df"
+  integrity sha512-q1JqieWb2YjA6OIal5XjtbF28LgJxEflwJB9x3OnE2OUgI0kWvaMlYMaW3opFmgcWPjx4o5lVhcGnwXeIhZfgg==
   dependencies:
-    tslib "2.3.1"
+    tslib "2.4.1"
 
-"@nestjs/bull@0.5.4":
-  version "0.5.4"
-  resolved "https://registry.npmjs.org/@nestjs/bull/-/bull-0.5.4.tgz#9ba27441d625500a49439eaadec2a81ffd2e961f"
-  integrity sha512-0w9E+Qvcyqfjwis6qrLIXjAUZcXZW1L4Yv0ytGMIuaZCrawx5NX0ytBRpRJTcvzIf8TEvNmNydt6fTn4iA/hiQ==
+"@nestjs/bull@0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/bull/-/bull-0.6.2.tgz#2f32e8e08d1aaed5d4bc7459bd4ceb67fab89320"
+  integrity sha512-tx5wiIGgfYEj5RAJA1B23pn/63nsmMH0f981V1/v3NKyE07NsvOXCrwKNGQnIZZlXkXh7lgx2I80/tYwPGnVIg==
   dependencies:
-    "@nestjs/bull-shared" "^0.0.4"
-    tslib "2.3.1"
+    "@nestjs/bull-shared" "^0.1.2"
+    tslib "2.4.1"
 
 "@nestjs/cli@8.2.5":
   version "8.2.5"
@@ -5603,15 +5603,15 @@ tslib@2.3.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
+tslib@2.4.1, tslib@^2.0.1, tslib@^2.1.0, tslib@^2.3.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.1.tgz#0d0bfbaac2880b91e22df0768e55be9753a5b17e"
+  integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
+
 tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.0.1, tslib@^2.1.0, tslib@^2.3.1:
-  version "2.4.0"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
-  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tsutils@^3.21.0:
   version "3.21.0"
