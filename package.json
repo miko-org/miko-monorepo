@@ -19,7 +19,7 @@
 		"@nestjs/config": "2.0.0",
 		"@nestjs/core": "8.4.4",
 		"@nestjs/platform-express": "8.4.4",
-		"@nestjs/schedule": "1.1.0",
+		"@nestjs/schedule": "2.2.0",
 		"@nestjs/typeorm": "8.0.3",
 		"@sentry/node": "6.19.7",
 		"bull": "4.8.3",
