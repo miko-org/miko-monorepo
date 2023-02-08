@@ -29,7 +29,7 @@
 		"helmet": "5.0.2",
 		"hot-shots": "9.0.0",
 		"necord": "dev",
-		"nestjs-hot-shots": "2.0.5",
+		"nestjs-hot-shots": "2.0.12",
 		"pg": "8.7.3",
 		"reflect-metadata": "0.1.13",
 		"rimraf": "3.0.2",
