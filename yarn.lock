@@ -4084,10 +4084,10 @@ neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-nestjs-hot-shots@2.0.5:
-  version "2.0.5"
-  resolved "https://registry.npmjs.org/nestjs-hot-shots/-/nestjs-hot-shots-2.0.5.tgz#460be57879368b07d8b0bd834d88bb45f8c5bac3"
-  integrity sha512-hhm/LYQXGAOU3VZ4NnF75HG1XuFdGS09+FDYe35UmSRcs8DNVpLT/G86ZXjS+EYNHWjP4Pgmm3VD6RShia+dQw==
+nestjs-hot-shots@2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/nestjs-hot-shots/-/nestjs-hot-shots-2.0.13.tgz#0e533f9f2d7b72999f3dc0643c0eb2fae13c4ab0"
+  integrity sha512-nqbDrVeZ3zCYHB6zc1szEtqEzfdK+x33roMG5W+nZwjAJ4Ab3Vx3s3j86Xkt1nL9vVhk8WS4QOKU8FRehcx6Dw==
 
 netmask@^2.0.1:
   version "2.0.2"
